@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Lipukasi - Kabupaten Barru</title>
+    <link rel="icon" type="image/png" href="logo barru.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        /* === GLOBAL STYLES === */
+        :root {
+            --primary: #2E8B57;
+            --secondary: #FFD700;
+            --dark: #1a2e35;
+            --light: #f8f9fa;
+            --accent: #3ab795;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        section {
+            padding: 80px 5%;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+            text-transform: uppercase;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* === NAVBAR === */
+        nav {
+            background: rgba(26, 46, 53, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+        }
+        
+        .logo {
+            color: white;
+            fontWeight: 700;
+            font-size: 1.8rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* === HERO SECTION === */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('forobersama.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1.5s ease;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 2s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+            background: transparent;
+            color: var(--secondary);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+        
+        /* === BERANDA SECTION === */
+        .beranda {
+            background-color: white;
+        }
+        
+        .beranda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .beranda-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .beranda-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .beranda-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .beranda-content {
+            padding: 25px;
+        }
+        
+        .beranda-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .beranda-content p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* === LAYANAN PUBLIK === */
+        .layanan {
+            background-color: var(--light);
+        }
+        
+        .layanan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .layanan-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .layanan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .layanan-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .layanan-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .layanan-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .layanan-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .layanan-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* === INFORMASI PUBLIK === */
+        .informasi {
+            background-color: white;
+        }
+        
+        .berita-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .berita-card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .berita-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .berita-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .berita-content {
+            padding: 25px;
+        }
+        
+        .berita-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .berita-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .berita-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .berita-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .berita-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .berita-link i {
+            margin-left: 5px;
+        }
+        
+        /* === VISI MISI === */
+        .visi-misi {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visi-misi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            opacity: 0.05;
+            z-index: 1;
+        }
+        
+        .visi-misi .section-title {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vm-container {
+            display: flex;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .visi-box, .misi-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .vm-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .vm-title i {
+            margin-right: 15px;
+            font-size: 2rem;
+        }
+        
+        .visi-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        
+        .misi-list {
+            list-style-type: none;
+        }
+        
+        .misi-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .misi-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        /* === GEOGRAFIS === */
+        .geografis {
+            background-color: var(--light);
+        }
+        
+        .geo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .geo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .geo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .geo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .geo-content {
+            padding: 25px;
+        }
+        
+        .geo-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .geo-content p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .dusun-list {
+            columns: 2;
+            margin-top: 15px;
+        }
+        
+        .dusun-list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .dusun-list li::before {
+            content: '\f3c5';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* === SARANA PRASARANA === */
+        .sarana {
+            background-color: white;
+        }
+        
+        .sarana-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .sarana-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 5px solid var(--primary);
+        }
+        
+        .sarana-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sarana-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .sarana-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .sarana-card p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* === POTENSI === */
+        .potensi {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .potensi .section-title {
+            color: white;
+        }
+        
+        .potensi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .potensi-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .potensi-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .potensi-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .potensi-card p {
+            line-height: 1.8;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 5% 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 992px) {
+            .about-content, .vm-container {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: block;
+                color: white;
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="navbar container">
+            <a href="#" class="logo">
+                <img src="logo barru.png" alt="Logo Desa Lipukasi">
+                <span>Desa Lipukasi</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#layanan">Layanan Publik</a>
+                <a href="#informasi">Informasi Publik</a>
+                <a href="#potensi">Potensi</a>
+                <a href="https://form.jotform.com/252187137677467" target="_blank">Pengaduan</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content container">
+            <h1>Desa Lipukasi</h1>
+            <p>Desa yang senantiasa diliputi kasih sayang oleh warga-warganya</p>
+            <div class="btn-group">
+                <a href="#beranda" class="btn">Jelajahi Desa</a>
+                <a href="#layanan" class="btn btn-outline">Layanan Publik</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BERANDA SECTION -->
+    <section class="beranda" id="beranda">
+        <div class="container">
+            <h2 class="section-title">Selamat Datang di Desa Lipukasi</h2>
+            <div class="beranda-grid">
+                <div class="beranda-card">
+                    <img src="foto desa.webp" alt="Sejarah Desa">
+                    <div class="beranda-content">
+                        <h3>Sejarah Desa</h3>
+                        <p>Menurut sejarahnya, "Lipu" yaitu Wanua (Dusun) dan "Kasi" yaitu Berkasih-kasihan (Rukun), artinya Desa Lipukasi adalah desa yang senantiasa diliputi kasih sayang oleh warga-warganya.</p>
+                        <p>Kini, Desa Lipukasi dipimpin oleh <strong>Kepala Desa Awaluddin, SE, MM</strong> yang berkomitmen untuk mewujudkan desa yang maju, mandiri, dan religius.</p>
+                    </div>
+                </div>
+                <div class="beranda-card">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Kegiatan Desa">
+                    <div class="beranda-content">
+                        <h3>Kegiatan Terkini</h3>
+                        <p>Desa Lipukasi aktif menyelenggarakan berbagai kegiatan untuk meningkatkan kesejahteraan masyarakat dan pembangunan desa.</p>
+                        <p>Beberapa kegiatan rutin meliputi gotong royong, pelatihan UMKM, dan penyuluhan kesehatan.</p>
+                    </div>
+                </div>
+                <div class="beranda-card">
+                    <img src="MASP.png" alt="Peta Lokasi">
+                    <div class="beranda-content">
+                        <h3>Peta Lokasi</h3>
+                        <p>Desa Lipukasi terletak di Kecamatan Tanete Rilau, Kabupaten Barru, Sulawesi Selatan.</p>
+                        <p>Berjarak 6 km dari ibukota Kabupaten Barru dan 4 km dari ibukota kecamatan Tanete Rilau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN PUBLIK -->
+
+<section class="layanan" id="layanan">
+<div class="container">
+<h2 class="section-title">Layanan Publik</h2>
+<div class="layanan-grid">
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-file-alt"></i>
+</div>
+<h3>Surat Keterangan Tidak Mampu</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong></p>
+<a class="layanan-btn" href="https://bit.ly/Suket_Tidak_Mampu_Lipukasi" target="_blank">Ajukan Sekarang</a>
+</div>
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-file-invoice"></i>
+</div>
+<h3>Surat Keterangan Kurang Mampu</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong></p>
+<a class="layanan-btn" href="https://bit.ly/Suket_Kurang_Mampu_Lipukasi" target="_blank">Ajukan Sekarang</a>
+</div>
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-business-time"></i>
+</div>
+<h3>Surat Keterangan Usaha</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong><br>
+<strong>- Foto Usaha</strong></p>
+<a class="layanan-btn" href="https://forms.gle/xxxxxxx3" target="_blank">Ajukan Sekarang</a>
+</div>
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Surat Keterangan Domisili</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong></p>
+<a class="layanan-btn" href="https://bit.ly/Suket_Domisili_Lipukasi" target="_blank">Ajukan Sekarang</a>
+</div>
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Surat Keterangan Ternak</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong></p>
+<a class="layanan-btn" href="https://forms.gle/62agG4uXZvGUXbuc6" target="_blank">Ajukan Sekarang</a>
+</div>
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-id-card"></i>
+</div>
+<h3>SKCK</h3>
+<p style="text-align:left"><strong>- Kartu Keluarga (KK)</strong><br>
+<strong>- Kartu Tanda Penduduk (KTP)</strong><br>
+<strong>- Pas Foto 4x6 Latar Merah</strong></p>
+<a class="layanan-btn" href="https://bit.ly/45ut1Lb" target="_blank">Ajukan Sekarang</a>
+</div>
+</div>
+</div>
+</section>
+
+    <!-- INFORMASI PUBLIK -->
+    <section class="informasi" id="informasi">
+        <div class="container">
+            <h2 class="section-title">Informasi Publik</h2>
+            <div class="berita-grid">
+                <div class="berita-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Kegiatan Desa">
+                    <div class="berita-content">
+                        <div class="berita-date">15 Juli 2024</div>
+                        <h3>Gotong Royong Bersih Desa</h3>
+                        <p>Warga Desa Lipukasi bersama-sama membersihkan lingkungan dalam rangka memperingati Hari Lingkungan Hidup Sedunia.</p>
+                        <a href="https://desalipukasi7.wordpress.com/2025/08/09/gotong-royong-warga-desa-lipukasi-menyambut-hari-lingkungan-hidup-sedunia/" target="_blank" class="berita-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="berita-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Pelatihan UMKM">
+                    <div class="berita-content">
+                        <div class="berita-date">5 Juli 2024</div>
+                        <h3>Pelatihan Pengembangan UMKM</h3>
+                        <p>Pemerintah Desa menyelenggarakan pelatihan pengembangan usaha mikro kecil dan menengah bagi warga desa.</p>
+                        <a href="https://desalipukasi7.wordpress.com/2025/08/09/hello-world/" target="_blank" class="berita-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="berita-card">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Pembangunan Jalan">
+                    <div class="berita-content">
+                        <div class="berita-date">25 Juni 2024</div>
+                        <h3>Pembangunan Jalan Dusun Lipukasi</h3>
+                        <p>Pemerintah Desa memulai proyek pembangunan jalan di Dusun Lipukasi untuk meningkatkan akses transportasi warga.</p>
+                        <a href="https://desalipukasi7.wordpress.com/2025/08/09/pembangunan-jalan-dusun-lipukasi-resmi-dimulai-akses-transportasi-warga-semakin-lancar/" target="_blank" class="berita-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISI MISI -->
+    <section class="visi-misi" id="visi-misi">
+        <div class="container">
+            <h2 class="section-title">Visi & Misi</h2>
+            <div class="vm-container">
+                <div class="visi-box">
+                    <h3 class="vm-title"><i class="fas fa-bullseye"></i> Visi</h3>
+                    <p>"Terwujudnya Desa Lipukasi lebih maju, mandiri, dan religius melalui pembangunan partisipatif dan tata kelola pemerintahan yang baik."</p>
+                </div>
+                <div class="misi-box">
+                    <h3 class="vm-title"><i class="fas fa-tasks"></i> Misi</h3>
+                    <ul class="misi-list">
+                        <li>Mewujudkan tata kelola pemerintahan yang lebih baik</li>
+                        <li>Meningkatkan pembangunan infrastruktur pedesaan secara partisipatif</li>
+                        <li>Meningkatkan pengembangan usaha ekonomi produktif masyarakat</li>
+                        <li>Meningkatkan kesejahteraan sosial masyarakat</li>
+                        <li>Meningkatkan kualitas dan perluasan layanan kesehatan dan pendidikan anak</li>
+                        <li>Memelihara nilai-nilai agama, sosial, dan budaya masyarakat</li>
+                        <li>Pembentukan komunitas lingkungan dan penanggulangan bencana</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GEOGRAFIS -->
+    <section class="geografis" id="geografis">
+        <div class="container">
+            <h2 class="section-title">Kondisi Geografis</h2>
+            <div class="geo-grid">
+                <div class="geo-card">
+                    <img src="MASP.png" alt="Lokasi Desa">
+                    <div class="geo-content">
+                        <h3>Letak Geografis</h3>
+                        <p>Desa Lipukasi merupakan salah satu dari 10 Desa/Kelurahan yang ada di Kecamatan Tanete Rilau yang terletak 6 km dari ibukota Kabupaten Barru dan 4 km dari ibukota kecamatan Tanete Rilau.</p>
+                        <p><strong>Batas Wilayah:</strong></p>
+                        <p>Sebelah Utara: Kecamatan Barru</p>
+                        <p>Sebelah Selatan: Selatan</p>
+                        <p>Sebelah Timur: Kecamatan Tanete Rilau</p>
+                        <p>Sebelah Barat: Selat Makassar</p>
+                    </div>
+                </div>
+                <div class="geo-card">
+                    <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1494&q=80" alt="Dusun">
+                    <div class="geo-content">
+                        <h3>Pembagian Wilayah</h3>
+                        <p>Desa Lipukasi memiliki 6 Dusun:</p>
+                        <ul class="dusun-list">
+                            <li>Dusun Pao</li>
+                            <li>Dusun Salomoni</li>
+                            <li>Dusun Lipukasi</li>
+                            <li>Dusun Gusunge</li>
+                            <li>Dusun Mareto</li>
+                            <li>Dusun Passede</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="geo-card">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Topografi">
+                    <div class="geo-content">
+                        <h3>Topografi & Iklim</h3>
+                        <p><strong>Topografi:</strong> Daerah pesisir, dataran rendah, dan berbukit dengan ketinggian 0-300 mdpl.</p>
+                        <p><strong>Lereng:</strong> Daerah datar 0-2% seluas 821 Ha dan daerah agak curam (8-15%) seluas 381 Ha.</p>
+                        <p><strong>Iklim:</strong> Memiliki 2 musim dengan curah hujan 2000-3000 mm/tahun.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SARANA PRASARANA -->
+    <section class="sarana" id="sarana">
+        <div class="container">
+            <h2 class="section-title">Sarana & Prasarana</h2>
+            <div class="sarana-grid">
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Pendidikan</h3>
+                    <p>5 TK, 6 SD, 1 SMP</p>
+                </div>
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Kesehatan</h3>
+                    <p>7 Posyandu</p>
+                </div>
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Perdagangan</h3>
+                    <p>1 SPBU, Warung/Toko, Penyedia Jasa</p>
+                </div>
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3>Peribadatan</h3>
+                    <p>7 Masjid, 2 Mushola</p>
+                </div>
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Jalan</h3>
+                    <p>Jaringan jalan arteri yang menghubungkan 2 provinsi</p>
+                </div>
+                <div class="sarana-card">
+                    <div class="sarana-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Listrik</h3>
+                    <p>Listrik prabayar dan pascabayar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POTENSI -->
+    <section class="potensi" id="potensi">
+        <div class="container">
+            <h2 class="section-title">Potensi Desa</h2>
+            <div class="potensi-grid">
+                <div class="potensi-card">
+                    <h3>Pertanian</h3>
+                    <p>Sebagai penyangga pangan di Sulawesi Selatan, Desa Lipukasi memiliki produktivitas komoditi padi yang terus meningkat berkat tanah yang subur dan teknik penanaman yang baik.</p>
+                </div>
+                <div class="potensi-card">
+                    <h3>Perikanan</h3>
+                    <p>Dusun Gusunge memiliki potensi besar di bidang perikanan, terutama ikan tangkap dan budidaya udang serta ikan tambak di wilayah pesisir.</p>
+                </div>
+                <div class="potensi-card">
+                    <h3>Perkebunan</h3>
+                    <p>Desa Lipukasi memiliki lahan perkebunan yang subur dengan komoditas utama seperti kelapa, cengkeh, dan kakao yang menjadi sumber penghasilan warga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGAN DESA -->
+<section class="beranda" id="bagan-desa">
+    <div class="container">
+        <h2 class="section-title">Bagan Desa</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <!-- Struktur Organisasi Pemerintahan -->
+            <div style="flex: 1 1 400px; text-align: center;">
+                <h3>Struktur Organisasi Pemerintahan Desa</h3>
+                <img src="TATA.jpg" alt="Struktur Organisasi Pemerintah" style="width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+            <!-- Struktur Kelembagaan BPD -->
+            <div style="flex: 1 1 400px; text-align: center;">
+                <h3>Struktur Organisasi Badan Permusyawaratan Desa</h3>
+                <img src="BPD.jpg" alt="Struktur Kelembagaan BPD" style="width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADMINISTRASI PENDUDUK -->
+<section class="beranda" id="administrasi">
+  <div class="container">
+    <h2 class="section-title">Administrasi Penduduk</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+      Efisiensi pengelolaan data dan informasi kependudukan yang lebih efektif.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; text-align: center;">
+      <div>
+        <img src="data:image/webp;base64,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" alt="Penduduk" style="width:96px;height:96px;" />
+        <h3>5.172</h3>
+        <p>Penduduk</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/businessman.png" alt="Laki-laki" />
+        <h3>2.536</h3>
+        <p>Laki-Laki</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/family.png" alt="Kepala Keluarga" />
+        <h3>1.604</h3>
+        <p>Kepala Keluarga</p>
+      </div>
+      <div>
+        <img src="https://cdn2.iconfinder.com/data/icons/avatar-business-people-set-one/128/avatar-11-1024.png" alt="Perempuan" style="width:96px;height:96px;" />
+        <h3>2.636</h3>
+        <p>Perempuan</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/real-estate.png" alt="Penduduk Sementara" />
+        <h3>0</h3>
+        <p>Penduduk Sementara</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/move-by-trolley.png" alt="Mutasi Penduduk" />
+        <h3>0</h3>
+        <p>Mutasi Penduduk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <div class="layanan-card">
+                    <div class="layanan-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Pengaduan</h3>
+                    <p>Formulir pengaduan untuk masyarakat Desa Lipukasi.</p>
+                    <a href="https://form.jotform.com/252187137677467" class="layanan-btn" target="_blank">Ajukan Pengaduan</a>
+                </div>
+    <!-- FOOTER -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Desa Lipukasi</h3>
+                    <p>Desa yang senantiasa diliputi kasih sayang oleh warga-warganya.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Poros Barru-Makassar, Kec. Tanete Rilau, Kab. Barru, Sulawesi Selatan</p>
+                    <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                    <p><i class="fas fa-envelope"></i> desalipukasi@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#layanan">Layanan Publik</a></li>
+                        <li><a href="#informasi">Informasi Publik</a></li>
+                        <li><a href="#visi-misi">Visi Misi</a></li>
+                        <li><a href="#geografis">Geografis</a></li>
+                        <li><a href="#sarana">Sarana</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Pemerintahan Desa</h3>
+                    <p><strong>Kepala Desa:</strong> Awaluddin, SE, MM</p>
+                    <p><strong>Sekretaris Desa:</strong> Irham Basri</p>
+                    <p><strong>Badan Permusyawaratan Desa:</strong> Lukman Muharram S.Pi</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Desa Lipukasi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(26, 46, 53, 0.98)';
+                nav.style.padding = '1rem 5%';
+            } else {
+                nav.style.background = 'rgba(26, 46, 53, 0.95)';
+                nav.style.padding = '1.5rem 5%';
+            }
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.beranda-card, .layanan-card, .berita-card, .visi-box, .misi-box, .geo-card, .sarana-card, .potensi-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.beranda-card, .layanan-card, .berita-card, .visi-box, .misi-box, .geo-card, .sarana-card, .potensi-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
